@@ -11,19 +11,25 @@
 </head>
 
 <body>
-    <div>
+    <div class="header">
         <h1>Etch-A-Sketch</h1>
     </div>
     <div class="board"></div>
     <div class="buttons">
-        <button>Black</button>
-        <button>Random</button>
-        <button>Erase</button>
-        <button>Reset</button>
+        <button class="black">Black</button>
+        <button class="random">Random</button>
+        <button class="erase">Erase</button>
+        <button class="reset">Reset</button>
     </div>
-    <div>
-        <input type="text" placeholder="Change Size of Board" value="16">
+    <div class="slider-box">
+        <input type="range" value="16" min="1" max="100" class="range-slider" onmousemove="rangeSliderValue(this.value)"
+            onChange="rangeSlider(this.value)">
+        <div id="progress-bar"></div>
     </div>
+
+
+    <p class="grid-size">Grid size: <span class="range-value">16</span> x <span class="range-value">16</span></p>
+
 
 </body>
 
