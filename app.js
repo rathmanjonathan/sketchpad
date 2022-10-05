@@ -1,3 +1,5 @@
+let color = 'black'
+
 function populateBoard(size) {
 let board = document.querySelector('.board');
 
@@ -6,30 +8,40 @@ board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
 let numDivs = size * size;
 
-changeSize();
+
 
 for (let i = 0; i < numDivs; i++) {
     let div = document.createElement('div');
     board.insertAdjacentElement('beforeend', div);
-    div.style.backgroundColor = 'blue';
-    div.addEventListener('mouseover', () => {
-        div.style.backgroundColor = 'black';
-    })
+    div.addEventListener('mouseover', colorSquare);
     
     }
 }
 populateBoard(16);
 
-function changeSize(size) {
-    let userInput = prompt('Adjust board size');
+function changeSize(input) {
+    if(input < 1 || input > 100) {
+        populateBoard(input)
+     }
+    else {
+        console.log('INVALID SELECTION');
+        
+    }
+    
 }
 
-function randomColor() {
-    const btn_randomColor = document.querySelector('.random');
-    btn_randomColor.addEventListener('click', (e) => {
-        console.log(btn_randomColor);
-    })
+function colorSquare() {
+    if(color === 'random') {
+    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+}  else {
+    this.style.backgroundColor = color;
+    }
 }
+function changeColor(choice) {
+    color = choice;
+}
+
+
 
 
 

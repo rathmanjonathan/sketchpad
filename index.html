@@ -16,19 +16,16 @@
     </div>
     <div class="board"></div>
     <div class="buttons">
-        <button class="black">Black</button>
-        <button class="random">Random</button>
-        <button class="erase">Erase</button>
-        <button class="reset">Reset</button>
+        <button onclick="changeColor('black')">Black</button>
+        <button onclick="changeColor('random')">Random</button>
+        <button onclick="changeColor('white')">Erase</button>
+        <button>Reset</button>
     </div>
-    <div class="slider-box">
-        <input type="range" value="16" min="1" max="100" class="range-slider" onmousemove="rangeSliderValue(this.value)"
-            onChange="rangeSlider(this.value)">
-        <div id="progress-bar"></div>
+    <div class="board-size-button">
+        <input type="text" placeholder="Board Size" value="16" onchange="changeSize(this.value)">
+        <button>Set Board Size</button>
     </div>
 
-
-    <p class="grid-size">Grid size: <span class="range-value">16</span> x <span class="range-value">16</span></p>
 
 
 </body>
